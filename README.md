@@ -1,27 +1,78 @@
-# AngularArcText
+# ngx-arc-text
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3.
+> Wrapper Library of [arc-text](https://github.com/kappys1/arc-text) to curve any text font on the web directly with angular.
 
-## Development server
+## Install
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```bash
+  npm install ngx-arc-text --save
+```
 
-## Code scaffolding
+## Examples
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+[Here](https://kappys1.github.io/ngx-arc-text/)
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Usage
 
-## Running unit tests
+1. Add to import Modules
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```js
+import { NgxArcTextModule } from 'ngx-arc-text';
 
-## Running end-to-end tests
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    NgxArcTextModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+2. You can use NgxArcTextComponent in your component:
 
-## Further help
+```html
+  <ngx-arc-text
+    [text]="text"
+    [arc]="arc"
+    [direction]=direction
+    #letters>
+  </ngx-arc-text>
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Params
+| Parameter | Type | Default | Description |
+| ------ | ------ | ------ | ------ |
+| text | string |  | Text you want to curve |
+| arc | number | 150 | Angle you want to curve |
+| direction | number | 1 | 1 is clockwise mode and -1 is counter-clockwise mode |
+
+## Function
+| Name | Params | Description |
+| ------ | ------ | ------ | ------ |
+| update |  | Re-Render again the curve text, is necesary if you change all style in your font, for example, size or font-family. |
+
+**how to access?**
+
+You can see in the example the tag '#letters', so in your controller you can get the ViewChild. 
+
+```js
+  import { INgxArcTextComponent } from 'dist/ngx-arc-text';
+
+
+  @ViewChild('letters') letters: INgxArcTextComponent;
+```
+
+Now you can update and see the component status.
+
+
+### Author
+Alex Marcos Gutierrez
+
+### License
+MIT

@@ -133,6 +133,41 @@
           }
         }
       }
+    },
+    "ngx-arc-text": {
+      "root": "projects/ngx-arc-text",
+      "sourceRoot": "projects/ngx-arc-text/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-arc-text/tsconfig.lib.json",
+            "project": "projects/ngx-arc-text/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-arc-text/src/test.ts",
+            "tsConfig": "projects/ngx-arc-text/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-arc-text/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-arc-text/tsconfig.lib.json",
+              "projects/ngx-arc-text/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "angular-arc-text"

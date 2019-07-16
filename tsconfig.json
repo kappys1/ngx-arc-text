@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-arc-text": [
+        "dist/ngx-arc-text"
+      ],
+      "ngx-arc-text/*": [
+        "dist/ngx-arc-text/*"
+      ]
+    }
   }
 }
