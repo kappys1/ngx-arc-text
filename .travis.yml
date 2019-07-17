@@ -9,6 +9,7 @@ node_js:
   - '11'
   - '8'
 script:
+  -
   - npm run build-lib && npm run build
 after_success:
   - npm run travis-deploy-once "npm run report-coverage"

@@ -1,9 +1,6 @@
 {
   "name": "ngx-arc-text",
   "version": "0.0.1",
-  "peerDependencies": {
-    "arc-text": "^1.0.1"
-  },
   "dependencies": {
     "arc-text": "^1.0.1"
   }
