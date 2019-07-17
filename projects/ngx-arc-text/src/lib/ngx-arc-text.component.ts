@@ -26,7 +26,6 @@ export class NgxArcTextComponent implements OnChanges {
   }
 
   private arcLetters(){
-    console.log("hola");
     if(this.textCyrcle) {
       this.textCyrcle.destroy()
     }
@@ -35,6 +34,5 @@ export class NgxArcTextComponent implements OnChanges {
 
     this.textCyrcle.arc(this.arc);
     this.textCyrcle.direction(this.direction);
-
   }
 }
