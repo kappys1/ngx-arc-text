@@ -3,5 +3,8 @@
   "dest": "../../dist/ngx-arc-text",
   "lib": {
     "entryFile": "src/public_api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "arc-text"
+  ]
 }
